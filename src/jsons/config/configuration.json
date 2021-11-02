@@ -1,0 +1,32 @@
+{
+  "local_db": {
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "root",
+    "database": "school_db",
+    "multipleStatements": true
+  },
+  "development_db": {
+    "connectionLimit": 10,
+    "host": "localhost",
+    "user": "inclogic_inclogic",
+    "password": "iG.?av7L[[jg",
+    "database": "inclogic_adverts_db",
+    "multipleStatements": true
+  },
+  "staging_db": {
+    "host": "bmgktugko8rqfsmcjcfc-mysql.services.clever-cloud.com",
+    "user": "uzypmrzahpqihmfz",
+    "password": "jUsXnjh6cg8xE4vwSgRZ",
+    "database": "bmgktugko8rqfsmcjcfc",
+    "multipleStatements": true
+  },
+
+  "production_db": {
+    "user": "NeeoNodeJs",
+    "password": "Hasan@*147",
+    "server": "remote.neeocloud.com",
+    "database": "OpenfireDb",
+    "multipleStatements": true
+  }
+}

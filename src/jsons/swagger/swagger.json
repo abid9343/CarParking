@@ -1,0 +1,1185 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Advertisement Project APIs",
+    "termsOfService": ""
+  },
+  "host": "localhost:3011",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Post",
+      "description": "Show that all Post details"
+    },
+    {
+      "name": "Post_Comment",
+      "description": "Show that all Post_Comment details"
+    },
+    {
+      "name": "Post_Like",
+      "description": "Show that all Post_Like details"
+    },
+    {
+      "name": "User",
+      "description": "Show that all User details"
+    },
+    {
+      "name": "Brand",
+      "description": "Show that all Brand details"
+    },
+    {
+      "name": "Subscribe",
+      "description": "Show that all Subscribe details"
+    },
+    {
+      "name": "Notification",
+      "description": "Show that all notification details"
+    },
+    {
+      "name": "Trending",
+      "description": "Show that all Trending details"
+    },
+    {
+      "name": "WEBPage",
+      "description": "Show that all WEBPage details"
+    }
+  ],
+  "schemes": ["https", "http"],
+  "paths": {
+    "/post_details": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "description": "search by user id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_items",
+            "description": "by default skip_items in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/post_details_v2": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "category_id",
+            "description": "by default category_id in 4",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_post": {
+      "post": {
+        "tags": ["Post"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Post"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/comment_details": {
+      "get": {
+        "tags": ["Post_Comment"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "post_id",
+            "description": "serach by post_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_comment": {
+      "post": {
+        "tags": ["Post_Comment"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Comment"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_comment_reply": {
+      "post": {
+        "tags": ["Post_Comment"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Comment_Reply"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_like": {
+      "post": {
+        "tags": ["Post_Like"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Like"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/like_details": {
+      "get": {
+        "tags": ["Post_Like"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "post_id",
+            "description": "serach by post_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/remove_like": {
+      "delete": {
+        "tags": ["Post_Like"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "post_id",
+            "description": "serach by post_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "like_by",
+            "description": "",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_user": {
+      "post": {
+        "tags": ["User"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/user_device_token": {
+      "patch": {
+        "tags": ["User"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeviceToken"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_brand": {
+      "post": {
+        "tags": ["Brand"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Brand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/brand_details": {
+      "get": {
+        "tags": ["Brand"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "brand_id",
+            "description": "serach by brand_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/all_brand_details": {
+      "get": {
+        "tags": ["Brand"],
+        "summary": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/brand_post_details_v2": {
+      "get": {
+        "tags": ["Brand"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/brand_pofile_details": {
+      "get": {
+        "tags": ["Brand"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "brand_id",
+            "description": "serach by brand_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/brand_post_details": {
+      "get": {
+        "tags": ["Brand"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "brand_id",
+            "description": "serach by brand_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "description": "serach by user_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/create_subscribe": {
+      "post": {
+        "tags": ["Subscribe"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Subscribe"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/subscribe_details": {
+      "get": {
+        "tags": ["Subscribe"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "user_id",
+            "description": "serach by user_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "description": "by default page_size in 15",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "skip_item",
+            "description": "by default skip_item in 0",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/un_subscribe": {
+      "delete": {
+        "tags": ["Subscribe"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "subscribe_id",
+            "description": "serach by subscribe_id",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/generic_push_notifcation": {
+      "post": {
+        "tags": ["Notification"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GenericNotification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/send_topic_notifcation": {
+      "post": {
+        "tags": ["Notification"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Topic_Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/upsert_trending": {
+      "post": {
+        "tags": ["Trending"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Trending"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/web_pages/{page_name}": {
+      "get": {
+        "tags": ["WEBPage"],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "page_name",
+            "description": "Only you added the value of the page_name param  {a) communityguidelines  b) privacypolicy c) tremsandconditions }",
+            "required": false,
+            "schema": {
+              "$ref": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Post": {
+      "type": "object",
+      "properties": {
+        "brand_id": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "isComment_Allow": {
+          "type": "boolean"
+        },
+        "isReport": {
+          "type": "integer"
+        },
+        "latitude": {
+          "type": "integer"
+        },
+        "longitude": {
+          "type": "integer"
+        },
+        "post_media": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "file_name": {
+                "type": "string"
+              },
+              "thumbnail": {
+                "type": "string"
+              },
+              "type": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "size": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Comment": {
+      "type": "object",
+      "properties": {
+        "post_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "integer"
+        }
+      }
+    },
+    "Comment_Reply": {
+      "type": "object",
+      "properties": {
+        "post_id": {
+          "type": "integer"
+        },
+        "comment_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "integer"
+        }
+      }
+    },
+    "Like": {
+      "type": "object",
+      "properties": {
+        "post_id": {
+          "type": "integer"
+        },
+        "like_by": {
+          "type": "integer"
+        }
+      }
+    },
+    "Subscribe": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "integer"
+        },
+        "brand_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "avatar_url": {
+          "type": "string"
+        }
+      }
+    },
+    "Brand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "categroy": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phone_no": {
+          "type": "string"
+        },
+        "ptcl_no": {
+          "type": "string"
+        },
+        "website_url": {
+          "type": "string"
+        },
+
+        "cover_url": {
+          "type": "string"
+        },
+        "avatar_url": {
+          "type": "string"
+        }
+      }
+    },
+    "DeviceToken": {
+      "type": "object",
+      "properties": {
+        "device_token": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "integer"
+        }
+      }
+    },
+    "GenericNotification": {
+      "type": "object",
+      "properties": {
+        "pnid": {
+          "type": "string"
+        },
+        "to_users": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Topic_Notification": {
+      "type": "object",
+      "properties": {
+        "topic_name": {
+          "type": "string"
+        }
+      }
+    },
+    "Trending": {
+      "type": "object",
+      "properties": {
+        "brand_id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "is_type": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
