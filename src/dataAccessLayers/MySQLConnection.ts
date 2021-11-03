@@ -1,8 +1,6 @@
 const util = require('util');
 const mysql = require('mysql');
-const configuration = require('../jsons/config/configuration.json')[
-  'development_db'
-];
+const configuration = require('../jsons/config/configuration.json')['local_db'];
 const pool = mysql.createPool(configuration);
 
 //connectionLimit: 10,

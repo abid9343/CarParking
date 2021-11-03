@@ -1,9 +1,10 @@
 {
   "local_db": {
     "host": "127.0.0.1",
-    "user": "root",
-    "password": "root",
-    "database": "school_db",
+    "user": "",
+    "password": "",
+    "database": "carparking",
+    "port": "3306",
     "multipleStatements": true
   },
   "development_db": {
